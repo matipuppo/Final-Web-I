@@ -1,0 +1,389 @@
+/** Resets y base */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: sans-serif;
+    background-color: #E0E0E0;
+    color: #1B2A41;
+}
+
+.titulo{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 2rem 0;
+    color: #1B2A41;
+
+}
+
+.cont-principal{
+    width: 100%;
+    overflow-x: auto;
+}
+
+.barra-superior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin: 2rem 3rem;
+    flex-wrap: wrap;
+    width: 95%;
+
+}
+.buscador input,
+.formulario-camion input,
+.formulario-camion textarea {
+  background-color: white;
+  border: 1px solid #ccc;
+  color: #1B2A41;
+}
+
+.buscador .formulario{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.buscador input{
+    padding: 1rem 1.5rem;
+    margin: 0 2rem;
+    width: 15%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1.6rem;
+    min-width: 200px;
+    flex: 1;
+}
+
+.barra-superior .btn-agregar{
+    font-size: 1.6rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 6px;
+    background-color: #1B2A41;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    
+}
+
+.barra-superior .btn-agregar:hover{
+    background-color: #00c13d;
+
+}
+
+.barra-superior .agregar-camiones{
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 2rem;
+}
+/** Tabla camiones*/
+
+.tabla-responsive{
+    margin-left: 40px;
+    width: 95%;
+    overflow-x: auto;
+    
+}
+
+
+.tabla-camiones {
+
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.6rem;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    
+}
+
+.tabla-camiones th, 
+.tabla-camiones td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+
+
+}
+
+.tabla-camiones td{
+    vertical-align: middle;
+}
+
+.tabla-camiones th {
+    background-color: #1B2A41;
+    color: white;
+
+}
+.tabla-camiones tr{
+    background-color: white;
+    color: #1B2A41;
+
+}
+
+
+.btn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1rem;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+
+
+.btn i {
+    pointer-events: none;
+    
+}
+
+/** Btn eliminar*/
+
+.btn.delete {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn.delete:hover {
+    background-color: #00c13d;
+    transform: scale(1.05);
+}
+
+/** Btn editar */
+
+.btn.edit {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn.edit:hover {
+    background-color: #00c13d;
+    transform: scale(1.05);
+}
+
+
+
+
+/** Formulario */
+
+.formulario-camion {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    background-color: #E0E0E0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.6rem;
+    z-index: 1;
+    max-width: 600px;
+    width: 90%;
+}
+
+.formulario-camion h3{
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.formulario-camion label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.formulario-camion input,
+.formulario-camion textarea {
+    width: 90%;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1.6rem;
+    
+}
+
+
+.formulario-camion .btn-guardar {
+    margin-top: 2rem;
+    background-color: #1B2A41;
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+}
+
+.formulario-camion .btn-guardar:hover{
+    background-color: #00c13d;
+}
+
+.oculto{
+    display: none;
+}
+
+.btn-cerrar-formulario {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    font-size: 1.4rem;
+    border: none;
+    cursor: pointer;
+    color: #555;
+}
+
+/** Responsive */
+
+/** <= 800px */
+@media screen and (max-width: 800px) {
+    .body{
+        background-color:#E0E0E0 ;
+    }
+
+    .barra-superior {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        margin: 2rem 3rem;
+        flex-wrap: wrap;
+        width: 95%;
+    }
+
+    .buscador input {
+        padding: 1rem 1.5rem;
+        margin: 30px;
+        width: 15%;
+        min-width: 200px;
+        flex: 1;
+    }
+
+    .tabla-camiones th,
+    .tabla-camiones td {
+        font-size: 1.4rem;
+        
+    }
+
+    .btn {
+        width: 32px;
+        height: 32px;
+        font-size: 1.4rem;
+    }
+
+    .tabla-camiones thead{
+        display: none;
+    }
+
+    .tabla-camiones {
+        display: block;
+        width: 100%;
+        background-color: #E0E0E0;
+    }
+
+    .tabla-camiones tbody {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 85%;
+        
+    }
+
+    .tabla-camiones tr {
+        display: block;
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .tabla-camiones td {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        border: none;
+    }
+
+    .tabla-camiones td:last-child {
+        justify-content: flex-end;
+        gap: 1rem;
+     }
+
+}
+
+/** <= 400px */
+
+@media screen and (max-width: 400px) {
+
+
+  .tabla-responsive {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .tabla-camiones {
+    width: 100%;
+    min-width: 320px;
+    box-sizing: border-box;
+  }
+
+  .tabla-camiones tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 60%;
+    min-width: 320px;
+  }
+
+  .tabla-camiones tr {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+    padding: 0.8rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .tabla-camiones td {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .tabla-camiones th {
+    font-size: 1.5rem;
+    text-align: left;
+    padding: 0.8rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+

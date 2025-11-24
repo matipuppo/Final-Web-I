@@ -1,0 +1,218 @@
+/** Reset y Base*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: sans-serif, Arial, Helvetica;
+    background-color: #E0E0E0;
+    font-size: 1.6rem;
+}
+
+/** Header*/
+
+header{
+    color: #1B2A41;
+    text-align: center;
+    padding: 2rem;
+}
+
+header h1{
+    font-size:  3rem;
+}
+
+main{
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+/** Filtros */
+
+.filters {
+  flex: 0 0 auto;
+  width: 200px;
+  max-width: 240px;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-right: 1px solid #ddd;
+
+  position: sticky;
+  top: 2rem;
+  align-self: flex-start;
+  height: fit-content;
+}
+
+
+.filters h2 {
+  font-size: 2rem;
+  color: #1B2A41;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.filtro-grupo {
+  display: flex;
+  flex-direction: column;
+}
+
+.filtro-grupo label {
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 0.4rem;
+}
+
+.filtro-grupo select {
+  height: 40px;
+  padding: 0 0.8rem;
+  font-size: 1.4rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  background-color: #fff;
+  color: #333;
+  appearance: none;
+  cursor: pointer;
+}
+
+
+#btn-aplicar-filtros {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    font-size: 1.4rem;
+    background-color: #1B2A41;
+    color: #fff;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btn-aplicar-filtros:hover {
+  background-color: #00c13d;
+}
+
+
+
+/** Listado de camiones */
+
+.lista-camiones {
+  width: 80%;
+  display: grid;
+  gap: 2rem;
+}
+
+
+.lista-camiones h2 {
+  grid-column: 1 / -1;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+
+
+/** Cads */
+
+.card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card h3{
+    font-size: 1.8rem;
+    margin: 1rem 0 0.5rem;
+    color: #1B2A41;
+}
+
+.card p{
+    font-size: 1.4rem;
+    margin:  0.3rem 0;
+}
+
+.card .precio,
+.camion-card .precio {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #00c13d;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.camion-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  text-align: center;
+}
+.camion-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+/** Responsive */
+
+@media (min-width: 50px) {
+  main {
+    flex-direction: column;
+  }
+
+  .filters {
+    width: 100%;
+    max-width: 100%;
+    position: static;
+    border-right: none;
+    margin-bottom: 2rem;
+  }
+
+  .lista-camiones {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+}
+/** Tablets (>= 768px) */
+
+@media (min-width: 768px) {
+  main {
+    flex-direction: row;
+  }
+
+  .filters {
+    width: 220px;
+    max-width: 240px;
+    position: sticky;
+    top: 2rem;
+    border-right: 1px solid #ddd;
+  }
+
+  .lista-camiones {
+    width: calc(100% - 240px);
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  }
+}
+
+/** Desktop (>= 1024px) */
+@media (min-width: 1024px) {
+  .lista-camiones {
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  }
+}

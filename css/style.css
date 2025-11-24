@@ -1,0 +1,221 @@
+/** Reset y base */
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+html { 
+  font-size: 62.5%; 
+}
+body { 
+  font-family: 'Segoe UI', Arial, sans-serif; 
+  font-size: 1.6rem; 
+  background-color: #E0E0E0; 
+  color: #1B2A41; 
+}
+
+/** Header */
+.main-header {
+  background-color: #1B2A41;
+  color: #fff;
+  width: 100%; 
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;              /* 🔑 siempre arriba */
+  left: 0;
+  z-index: 2; 
+
+}
+.logo img { 
+  height: 50px; 
+}
+.main-nav ul { 
+  list-style: none; 
+  display: flex; 
+  gap: 2rem; 
+}
+.main-nav a { 
+  color: #fff; 
+  text-decoration: none; 
+  font-weight: bold; 
+}
+.main-nav a:hover { 
+  color: #00c13d; 
+}
+
+/** banner */
+.banner { 
+  position: relative; 
+  width: 100%; 
+  height: 420px; 
+  overflow: hidden; 
+}
+.banner img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+/** camiones destacados */
+.destacados { 
+  padding: 2rem; 
+  text-align: center; 
+}
+.destacados h2 { 
+  font-size: 2.4rem; 
+  color: #1B2A41; 
+  margin-bottom: 1rem; 
+}
+
+.cards {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem; 
+  margin-top: 1rem;
+}
+.card {
+  background: #fff; 
+  padding: 1.5rem; 
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover { 
+  transform: translateY(-5px); 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+}
+.card img { 
+  width: 100%; 
+  height: 180px; 
+  object-fit: cover; 
+  border-radius: 0.5rem; }
+.card h3 { 
+  font-size: 1.8rem; 
+  color: #1B2A41; 
+  margin: 1rem 0 0.5rem; 
+}
+.card p { 
+  font-size: 1.4rem; 
+  color: #000; 
+}
+
+/** Quienes somos */
+.descripcion {
+  padding: 2rem; 
+  background: #fff; 
+  margin: 2rem; 
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.descripcion h2 { 
+  font-size: 2rem; 
+  color: #1B2A41; 
+  margin-bottom: 1rem; 
+}
+.descripcion p { 
+  font-size: 1.6rem; 
+  color: #000; 
+  text-align: justify; 
+}
+
+/** Contacto + Mapa */
+.contacto-mapa {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 2rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.contacto, .mapa {
+  padding: 2rem;
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+  border-radius: 0;
+}
+
+
+/** Botón flotante de WhatsApp */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+  z-index: 2;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  background-color: #20b858;
+}
+
+
+/** Footer */
+footer { 
+  background: #1B2A41; 
+  color: #fff; 
+  text-align: center; 
+  padding: 1rem; 
+  margin-top: 2rem; 
+}
+
+/** Responsive */
+@media (max-width: 830px) {
+  .main-nav ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .main-nav li {
+    flex: 1;
+    text-align: center;
+  }
+
+  .main-nav a {
+    display: inline-block;
+    padding: 0.8rem;
+  }
+
+  .banner { height: 340px; }
+  
+  .destacados { padding: 1.5rem; }
+  .descripcion { margin: 1rem; }
+
+  .contacto-mapa {
+    grid-template-columns: 1fr;
+  }
+
+  .mapa iframe {
+    height: 24rem;
+  }
+  .cards {
+      grid-template-columns: 1fr;
+      justify-items: center;
+
+    .card {
+      width: 90%;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto-Camiones</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="/css/productos.css">
+
+    <!-- JS -->
+     <script src="/js/camiones.js" defer></script>
+     <script src="/js/productos.js" defer></script>
+
+
+
+</head>
+<body>
+    <header>
+        <h1>Camiones</h1>
+    </header>
+    <main>
+        <aside class="filters">
+            <h2>Filtrar Resultados</h2>
+
+            <div class="filtro-grupo">
+                <label for="filtro-marca">Marca</label>
+                <select id="filtro-marca"><option>Todos</option></select>
+            </div>
+            
+            <div class="filtro-grupo">
+                <label for="filtro-modelo">Modelo</label>
+                <select id="filtro-modelo"><option>Todos</option></select>
+            </div>
+
+            <div class="filtro-grupo">
+                <label for="filtro-anio">Año</label>
+                <select id="filtro-anio"><option>Todos</option></select>
+            </div>
+
+            <div class="filtro-grupo">
+                <label for="filtro-precio">Precio</label>
+                <select id="filtro-precio"><option>Todos</option></select>
+            </div>
+
+            <button id="btn-aplicar-filtros">Aplicar Filtros</button>
+
+        </aside>
+
+        <section class="lista-camiones">
+            <h2>Lista de camiones</h2>
+            <!-- Insertar camiones desde JS -->
+        </section>
+
+    </main>
+</body>
+</html>

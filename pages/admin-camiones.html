@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Camiones</title>
+
+    <link rel="stylesheet" href="/css/administrar-camiones.css">
+    <script src="/js/camiones.js" defer></script>
+    <script src="/js/administrar-camiones.js" defer></script>
+
+    <!-- Fontawesome -->
+
+    <script src="https://kit.fontawesome.com/5ff9e38afc.js" crossorigin="anonymous"></script>
+
+    
+</head>
+<body>
+    
+    <header>
+        <h1 class="titulo">Administrar Camiones</h1>
+    </header>
+    <main class="cont-principal">
+       <div class="lista-camiones" id="lista-camiones-id">
+            <div class="barra-superior">
+                <div class="buscador">
+                    <label for="buscador-camiones" class="formulario">Buscador Camiones</label>
+                    <input type="text" class="formulario-control" id="buscador-camiones" onkeyup="buscador(event)">
+                
+                </div>
+
+                <div class="contenedor-bnt-accion">
+                    <label for="btn-agregar-camion" class="agregar-camiones">Agregar Camion</label>
+                    <button  class="btn-agregar" id="btn-agregar-camion" onclick="mostrarFormularioAgregarCamion()">
+                            <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+                
+                <div id="formulario-agregar-camion" class="formulario-camion oculto">
+                    <h3>Nuevo vehiculo</h3>
+                    <form id="camion-form">
+                        <label for="dominio">Dominio:</label>
+                        <input type="text" id="dominio" name="dominio" required>
+
+                        <label for="marca">Marca:</label>
+                        <input type="text" id="marca" name="marca" required>
+
+                        <label for="modelo">Modelo:</label>
+                        <input type="text" id="modelo" name="modelo" required>
+
+                        <label for="anio">Año:</label>
+                        <input type="number" id="anio" name="anio" min="1950" max="2025" required>
+
+                        <label for="descripcion">Descripcion:</label>
+                        <textarea id="descripcion" name="descripcion" rows="1"></textarea>
+
+                        <label for="precio">Precio (USD):</label>
+                        <input type="number" id="precio" name="precio" min="1000" required>
+
+                        <label for="image">Imagen (URL):</label>
+                        <input type="text" name="image" id="image" required>
+
+
+                        <button type="submit" class="btn-guardar">Guardar</button>
+                        <button type="button" class="btn-cerrar-formulario" onclick="cerrarFormularioCamion()">✖️</button>
+                    </form>
+                </div>
+
+                 <div id="formulario-editar-camion" class="formulario-camion oculto">
+                    <h3>Editar vehiculo</h3>
+                    <form id="form-editar-camion">
+                        <label for="dominio">Dominio:</label>
+                        <input type="text" id="dominio" name="dominio" required>
+
+                        <label for="marca">Marca:</label>
+                        <input type="text" id="marca" name="marca" required>
+
+                        <label for="modelo">Modelo:</label>
+                        <input type="text" id="modelo" name="modelo" required>
+
+                        <label for="anio">Año:</label>
+                        <input type="number" id="anio" name="anio" min="1900" max="2100" required>
+
+                        <label for="descripcion">Descripcion:</label>
+                        <textarea id="descripcion" name="descripcion" rows="1"></textarea>
+
+                        <label for="precio">Precio (USD):</label>
+                        <input type="number" id="precio" name="precio" required>
+
+                        <button type="submit" class="btn-guardar">Guardar</button>
+                        <button type="button" class="btn-cerrar-formulario" onclick="cerrarFormularioEditarCamion()">✖️</button>
+                    </form>
+                </div>
+
+            </div>
+            <div class="tabla-responsive">
+                <div class="tabla-camiones">
+                    <table class="tabla-camiones">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Dominio</th>
+                                <th scope="col">Marca</th>
+                                <th scope="col">Modelo</th>
+                                <th scope="col">Año</th>
+                                <th scope="col">Precio (USD)</th>
+                                <th scope="col">Descripcion</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpo-de-tabla"></tbody>
+                    </table>
+                </div>
+            </div>
+            
+
+       </div>
+    </main>
+    
+    
+    
+
+
+</body>
+</html>
